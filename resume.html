@@ -29,6 +29,7 @@
 <br>
 </head>
 <body>
+ <div class= "text-center">
   <button type="button" onclick= addie() >2 + 1 = ?</button>
   
   <button type="button" onclick= clickme() >3 = ?</button>
@@ -38,13 +39,20 @@
   
   <p id= "someName"> Some of my name will be here </p>
   <p id= "rel"> The Mighty </p>
+  
+  <button type="button" onclick=picChange()> Who was he before? </button>
+ <img id= "graphic"  src="/Ness.png" width="480" height="360" title="Sans in Smash " alt="Sans Confirmed">
+ </div>
   <script>
+  function picChange(){
+    var pic= document.getElementById("graphic")
+    pic.src= "sansdunkedon.jpg"
+  }
   function clickme(){
     var ptext = document.getElementById('ptext')
     ptext.innerHTML = 'Stay Frosty'
     ptext.style.fontSize = '42px'
     ptext.style.color = '#ff8d00'
-    ptext.style.textAlign = 'center'
   }
  function addie(){ 
     var x = 1
