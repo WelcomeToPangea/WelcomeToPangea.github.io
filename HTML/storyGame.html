@@ -29,6 +29,9 @@
         </div>
     </div>
 <style>
+        body{
+            overflow:hidden;
+        }
         #container{
             position:absolute;
             top: 40px;
@@ -40,13 +43,13 @@
         #leftpane{
             width: 56%;
             height: 100%;
-            background: orange;
+            /*background: red;*/
             float: left;
         }
          #rightpane{
             width: 44%;
             height: 100%;
-            background: yellow;
+            /*background: orange;*/
             float: left;
         }
         #storybuttons{
@@ -55,7 +58,13 @@
             left: 56%;
             right: 0px;
             height: 10%;
-            background: lime;
+            /*background: lime;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn {
+            margin: 30px;
         }
         #storytext{
             position: absolute;
@@ -63,27 +72,40 @@
             left: 56%;
             right: 0px;
             height: 90%;
-            background: pink;
+            /*background: pink;*/
         }
+        #graphic{
+            max-height: 100%;
+            max-width: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #bottomtext{
+            color: white;
+            font-size: 20px;
+        }
+        /* PURPLE :) */
 </style>
 <br>
 </head>
 <body>
     <div id = "Container">
         <div id= "leftpane">
-            
+            <img id = graphic src="lando.jpg" />
         </div>
         
         <div id = "rightpane">
             <div id= "storytext">
-                
+                <p id="bottomtext"> back to the future </p>
             </div>
             
             <div id = "storybuttons">
-                <button type="button" class="btn btn-danger"> Punch</button>
-                <button type="button" class="btn btn-danger"> Kick</button>
-                <button type="button" class="btn btn-danger"> High Block</button>
-                <button type="button" class="btn btn-danger"> Low Block</button>
+                <button id= "b1" type="button" class="btn btn-danger"> Punch</button>
+                <button id= "b2" type="button" class="btn btn-danger"> Kick</button>
+                <button id= "b3" type="button" class="btn btn-danger"> High Block</button>
+                <button id= "b4" type="button" class="btn btn-danger"> Low Block</button>
             </div>
         </div>
         
@@ -92,4 +114,19 @@
         
         
     </div>
+    <script>
+        var graphic = document.getElementById("graphic");
+        var bottomtext = document.getElementById("bottomtext");
+        var b1 =document.getElementById("b1");
+        var b2 =document.getElementById("b2");
+        var b3 =document.getElementById("b3");
+        var b4 =document.getElementById("b4");
+        var state = "intro";
+        
+        function intro(){
+            bottomtext.innerHTML = "Finnmark Norway, July 8, 1233, 4:56 pm <br> You are Punctor Yengren, the only black Nord, and also an expert in every known martial art. <br> Oh, also you invented the English language.";
+            
+        }
+        
+    </script>
 </body>
