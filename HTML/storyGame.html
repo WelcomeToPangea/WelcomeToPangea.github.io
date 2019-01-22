@@ -98,14 +98,14 @@
         
         <div id = "rightpane">
             <div id= "storytext">
-                <p id="bottomtext"> back to the future </p>
+                <p id="bottomtext">  </p>
             </div>
             
             <div id = "storybuttons">
-                <button id= "b1" type="button" class="btn btn-danger"> Punch</button>
-                <button id= "b2" type="button" class="btn btn-danger"> Kick</button>
-                <button id= "b3" type="button" class="btn btn-danger"> High Block</button>
-                <button id= "b4" type="button" class="btn btn-danger"> Low Block</button>
+                <button id= "b1" type="button" class="btn btn-danger" onclick = buttonclick(1)> Click</button>
+                <button id= "b2" type="button" class="btn btn-danger" onclick = buttonclick(2)> Any</button>
+                <button id= "b3" type="button" class="btn btn-danger" onclick = buttonclick(3)> To</button>
+                <button id= "b4" type="button" class="btn btn-danger" onclick = buttonclick(4)> Start</button>
             </div>
         </div>
         
@@ -124,9 +124,40 @@
         var state = "intro";
         
         function intro(){
-            bottomtext.innerHTML = "Finnmark Norway, July 8, 1233, 4:56 pm <br> You are Punctor Yengren, the only black Nord, and also an expert in every known martial art. <br> Oh, also you invented the English language.";
-            
+            bottomtext.innerHTML = "Finnmark Norway, July 8, 1233, 4:56 pm. You are Punctor Yengren, the only black Nord, and also an expert in every known martial art. Oh, and the inventor of the English language.";
+            b1.innerHTML = "Next";
+            b1.style.display = "";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+            var state = "intro2";
         }
-        
+         function intro2(){
+             bottomtext.innerHTML = "This is Mama June. And mama don't like no lazies. She wants you to get out and get a job as a grown man living at home. Do you want to start your career or pursuit your passion as a fighter?";
+              b1.innerHTML = "Get a job";
+            b1.style.display = "";
+              b2.innerHTML = "Go fight"
+            b2.style.display = "";
+            b3.style.display = "none";
+            b4.style.display = "none";
+         }
+         function buttonclick(button){
+            if (state == intro){
+                if (button == 1)
+                    intro();
+                if (button == 2)
+                    intro();
+                if (button == 3)
+                    intro();
+                if (button == 4)
+                    intro();
+            }
+            else if (state == "intro2") {
+                if (button == 1){ 
+                    intro2()
+                }
+            
+            }
+         }
     </script>
 </body>
