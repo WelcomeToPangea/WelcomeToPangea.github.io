@@ -130,34 +130,250 @@
             b2.style.display = "none";
             b3.style.display = "none";
             b4.style.display = "none";
-            var state = "intro2";
+            state = "intro2";
         }
          function intro2(){
              bottomtext.innerHTML = "This is Mama June. And mama don't like no lazies. She wants you to get out and get a job as a grown man living at home. Do you want to start your career or pursuit your passion as a fighter?";
-              b1.innerHTML = "Get a job";
-            b1.style.display = "";
-              b2.innerHTML = "Go fight"
+              b1.innerHTML = "Get a job for $$";
+              b2.innerHTML = "Go fight for $$"
             b2.style.display = "";
+            state = "fP";
+         }
+         /* fP is first punch function */
+         function fP(){
+             bottomtext.innerHTML = "You approach the store and the owner appears very wealthy and decrepit. Do you change your mind or throw the first punch?";
+             b1.innerHTML = "First punch of your career!";
+             b2.innerHTML = "Maybe later...";
+             state = "tF"
+         }
+         
+         function job(){
+             bottomtext.innerHTML ="Mama June is proud of your work at MacDougals, the local beef shop. You think this will be big someday. Maybe change the name. GAME OVER.";
+             b1.innerHTML = "Try Again?";
+             b2.style.display ="none";
+             state = "intro";
+         } 
+         /*tF is the tutorialFight function*/
+         function tF(){
+             bottomtext.innerHTML = "Not letting your guard down, you decide to beat the frail elder. No matter, we'll remind you how to brawl it out even if your target is a defenseless old man! He seems to be putting his arms up. If an opponent is doing this, go for a kick!";
+             b1.innerHTML = "Punch";
+             b2.innerHTML = "Kick";
+             b3.innerHTML = "High Block";
+             b4.innerHTML = "Low Block";
+             b3.style.display = "";
+             b4.style.display = "";
+             b1.setAttribute("class", "btn btn-secondary");
+             b3.setAttribute("class", "btn btn-secondary");
+             b4.setAttribute("class", "btn btn-secondary");
+             state = "hB"
+         }
+         function gameOver2(){
+            bottomtext.innerHTML = "The old man blocked your pathetic, malinformed punch and countered with the force of 1000 suns."
+            b1.innerHTML = "Try Again?"
+            b2.style.display = "none";
             b3.style.display = "none";
             b4.style.display = "none";
+            b1.setAttribute("class", "btn btn-danger");
+            b3.setAttribute("class", "btn btn-danger");
+            b4.setAttribute("class", "btn btn-danger");
+            state = "intro"
          }
-         function buttonclick(button){
-            if (state == intro){
-                if (button == 1)
-                    intro();
-                if (button == 2)
-                    intro();
-                if (button == 3)
-                    intro();
-                if (button == 4)
-                    intro();
-            }
-            else if (state == "intro2") {
-                if (button == 1){ 
-                    intro2()
-                }
+         function hB(){
+             bottomtext.innerHTML = "Yea, just like that! He is still keeping his hands up. Perhaps he is going for a jab, the mad lad. You could block it.";
+             b2.setAttribute("class", "btn btn-secondary");
+             b3.setAttribute("class", "btn btn-danger");
+             state = "freeChoice"
+         }
+         function gameOver3(){
+            bottomtext.innerHTML = "By the Gods, you are bad. The old man clocks you right in the jaw and you black out forever.";
+            b1.innerHTML = "Try Again";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+            b1.setAttribute("class", "btn btn-danger");
+            b2.setAttribute("class", "btn btn-danger");
+            b4.setAttribute("class", "btn btn-danger");
+            state = "intro"
+         }
+         
+         function freeChoice(){
+            bottomtext.innerHTML = "The old man goes for it. Nice block champ you're really remembering fast. Everyone is crowding around awaiting your next move as the old man takes a step back. What could he be doing? Act accordingly, no one wants to see not-alive young men.";
+            b1.setAttribute("class", "btn btn-danger");
+            b2.setAttribute("class", "btn btn-danger");
+            b4.setAttribute("class", "btn btn-danger");
+            state = "nFC"
+         }
+         
+         /**/
+         function tS1(){
+             bottomtext.innerHTML = "The crippled man kicked you before you could punch"
+             b1.innerHTML = "Next";
+             b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+            state = "nFC2";
+         }
+         function tS2(){
+             bottomtext.innerHTML = "You tried to kick but the crippled man has swift legs"
+             b1.innerHTML = "Next";
+             b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+             state = "nFC2";
+         }
+         function tS3(){
+             bottomtext.innerHTML = "The old guy kicked you"
+             b1.innerHTML = "Next";
+             b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+             state = "nFC2";
+         }
+         function tS4(){
+             bottomtext.innerHTML = "You blocked his fairly quick attack"
+             b1.innerHTML = "Next";
+             b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+             state = "nFC2";
             
+         }
+         /**/
+         function nFC2(){
+             bottomtext.innerHTML = "The crippled man doesn't seem to want to continue fighting, go for the final blow and bring honor to your village!";
+             b1.innerHTML = "Punch";
+             b2.innerHTML = "Kick";
+             b3.innerHTML = "High Block";
+             b4.innerHTML = "Low Block";
+             b2.style.display = "";
+            b3.style.display = "";
+            b4.style.display = "";
+            b1.setAttribute("class", "btn btn-danger");
+            b2.setAttribute("class", "btn btn-danger");
+            b4.setAttribute("class", "btn btn-danger");
+            state = "eOG"
+         }
+         
+         function gameOver4(){
+             bottomtext.innerHTML = "You blocked... This is not the life for you. The man stabs you with his cane and you black out forever."
+             b1.innerHTML = "Try Again?"
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+            b1.setAttribute("class", "btn btn-danger");
+            b3.setAttribute("class", "btn btn-danger");
+            b4.setAttribute("class", "btn btn-danger");
+            state = "intro"
+         }
+         function gameOver(){
+             bottomtext.innerHTML = "You struck the man with a mighty blow and he dropped like a fly. The pathetic old man is no more and you are now on the path to becoming a TRUE WARRIOR! You are a hero amongst your people as no one really liked the mysterious handicapped aristocrat. You bask in your glory until a later date, fair Punctor. END OF DEMO"
+              b1.innerHTML = "Try Again?"
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+            b1.setAttribute("class", "btn btn-danger");
+            b3.setAttribute("class", "btn btn-danger");
+            b4.setAttribute("class", "btn btn-danger");
+         }
+         
+         function buttonclick(button){
+            if (state == "intro"){
+                if (button == 1){
+                    intro();
+                }
+                else if (button == 2){
+                    intro();
+                }
+                else if (button == 3){
+                    intro();
+                }
+                else if (button == 4){
+                    intro();
+                }
+            }
+            else if (state == "intro2"){
+                if (button == 1){
+                    intro2();
+                }
+            }
+            else if (state == "fP"){
+                if (button == 1){
+                    job();
+                }
+                else if (button == 2){
+                    fP();
+                }
+            }
+            else if (state == "tF"){
+                if (button == 1){
+                    tF();
+                }
+                else if (button == 2)
+                    intro2();
+            }
+            else if (state == "hB"){
+                if (button ==1){
+                    gameOver2();
+                }
+                else if (button == 2){
+                    hB();
+                }
+                else if (button == 3){
+                    bottomtext.innerHTML ="Maybe press the red 'Kick' button"
+                }
+                else if (button == 4){
+                    bottomtext.innerHTML ="Maybe press the red 'Kick' button"
+                }
+            }
+            else if (state == "freeChoice"){
+                if (button ==1){
+                    bottomtext.innerHTML ="Maybe press the red 'High Block' button"
+                }
+                else if (button == 2){
+                    bottomtext.innerHTML ="Maybe press the red 'High Block' button"
+                }
+                else if (button == 3){
+                    freeChoice();
+                }
+                else if (button == 4){
+                    gameOver3();
+                }
+            }
+            else if (state == "nFC"){
+                if (button ==1){
+                    tS1();
+                }
+                else if (button == 2){
+                    tS2();
+                }
+                else if (button == 3){
+                    tS3()
+                }
+                else if (button == 4){
+                    tS4();
+                }
+            }
+            else if (state == "nFC2"){
+                if (button == 1){
+                    nFC2();
+                }
+            }
+            else if (state == "eOG"){
+                if (button == 1){
+                    gameOver()
+                }
+                else if (button == 2){
+                    gameOver()
+                }
+                else if (button == 3){
+                    gameOver4()
+                }
+                else if (button == 4){
+                    gameOver4()
+                }
             }
          }
+         
+        
     </script>
 </body>
