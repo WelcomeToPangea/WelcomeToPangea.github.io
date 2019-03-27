@@ -23,7 +23,7 @@
             <a class="nav-link" href="./projects2.html">Projects (Cont)</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="./createTask.html">Projects (Cont 2)</a>
+            <a class="nav-link active" href="./pythonProject.html">Projects (Cont 2)</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./contactme.html">Contact Me</a>
@@ -37,10 +37,32 @@
   
   <a href="mailto:"></a>
   <div class= "text-center">
-  <h1> The Clasic Game of Nim.</h1>
-  <p> </p>
-  <iframe height="1000px" width="100%" src="https://repl.it/@ScottRobert/Python-Project-1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
- </div>
+    <h1> The Clasic Game of Nim.</h1>
+    <video>
+    <source src="Nim.mp4" type="Nim/mp4">
+    Your browser does not support the video tag.
+    </video>
+    <p>The video provided above shows the running of the game against the AI bot. The 
+    intended pupose of the program is to play Nim until you can master it and win
+    against the bot (As shown).</p>
+    <p> One difficulty that was encountered was the printing of the stones. 
+    Originaly the stone piles were printed horizontally all in the same print function. 
+    Naturaly, this caused issues as the variables used for each pile had to be nested
+    inside eachother for a total of 64 combinations spanning across a maximum of 9 turn 
+    fuctions. The way this was fixed, is I implemented 3 seperate functions that stored 
+    the pile values and printed the piles verically so I only had to code 4 possibilities
+    of each pile. One opporotunity we encountered was the chance to create a looping turn 
+    system, as opposed to 9 turn functions that led to the next one. This was achieved 
+    through playerTurn values that set the turn value equal to the player 
+    playing next, either =1 or = 2. This player vs player function was easily transfered 
+    to the AI as well, simplifying and shortening the code as a whole. One part of the 
+    code I completed independantly was the Player vs Player portion of the game where 
+    players take turns taking stones as opposed to the algorithmic functions of the bot.</p>
+    </break>
+    <iframe height="900px" width="90%" src="https://repl.it/@ScottRobert/Python-Project-1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+    <p>You can also see the game on a seperate webpage <a href=https://khalil-l.github.io/nim.html> here </a></p>
+    </div>
+ 
 </body>
 <foot>
   <div class=float-right>
